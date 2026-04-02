@@ -1,0 +1,8 @@
+// 1.21.1	2026-04-02T19:20:41.0042318	Tags for minecraft:item mod id opencreation
+65c58b5f9cd933937830939b9993818b39ffdd6c data/minecraft/tags/item/axes.json
+143a7ccd62f6356577d5c284c5e78c5958fcf9a1 data/minecraft/tags/item/hoes.json
+eb833d4091721c6fa32281320ea964ec17ec847d data/minecraft/tags/item/pickaxes.json
+7397ce00ce434ac1728022bda1a1602b7dc7a1a5 data/minecraft/tags/item/shovels.json
+c777fb41ab960cc7387b364f6c89c5b489b775ea data/minecraft/tags/item/swords.json
+8317d40f01d60a4d9850b9086b5cc2c1b2eddf18 data/opencreation/tags/item/plank.json
+2ac385db3ecbd3d8d4aaf7fe53f47b813baca967 data/opencreation/tags/item/shovel_hoe.json

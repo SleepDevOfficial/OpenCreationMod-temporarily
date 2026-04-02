@@ -1,0 +1,12 @@
+{
+  "itemGroup.opencreation": "OpenCreation",
+  "item.opencreation.fragment_of_stones": "Stone fragment",
+
+  "opencreation.configuration.title": "OpenCreation Configs",
+  "opencreation.configuration.section.opencreation.common.toml": "OpenCreation Configs",
+  "opencreation.configuration.section.opencreation.common.toml.title": "OpenCreation Configs",
+  "opencreation.configuration.items": "Item List",
+  "opencreation.configuration.logDirtBlock": "Log Dirt Block",
+  "opencreation.configuration.magicNumberIntroduction": "Magic Number Text",
+  "opencreation.configuration.magicNumber": "Magic Number"
+}

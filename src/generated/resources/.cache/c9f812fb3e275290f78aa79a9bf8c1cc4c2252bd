@@ -1,0 +1,4 @@
+// 1.21.1	2026-04-02T19:20:40.9830864	Tags for minecraft:block mod id opencreation
+b0a826a52a97a7416d08411a91e8154b81eeac29 data/minecraft/tags/block/mineable/axe.json
+7e7a8a760b4e74613cee09dba819d1be0c32876f data/opencreation/tags/block/incorrect_for_primitive_tool.json
+9c2099d37d36fe815e8d364f24b65a2aca940ef1 data/opencreation/tags/block/needs_primitive_tool.json

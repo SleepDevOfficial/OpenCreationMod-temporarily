@@ -1,0 +1,9 @@
+{
+  "remove": [
+    "#minecraft:copper_ores",
+    "#minecraft:iron_ores"
+  ],
+  "values": [
+    "#minecraft:needs_stone_tool"
+  ]
+}
