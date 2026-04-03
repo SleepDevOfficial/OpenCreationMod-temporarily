@@ -1,6 +1,7 @@
 package com.sdev.opencreation.worldgen;
 
 import com.sdev.opencreation.OpenCreation;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -8,7 +9,10 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -20,8 +24,26 @@ public class OCPlacedFeatures {
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, TEST_PLACED_KEY, configuredFeatures.getOrThrow(OCConfiguredFeatures.TEST_KEY),
-                List.of( InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        register(context,
+                TEST_PLACED_KEY,
+                configuredFeatures.getOrThrow(OCConfiguredFeatures.TEST_KEY),
+                List.of(
+                        CountPlacement.of(2),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BlockPredicateFilter.forPredicate(
+                                BlockPredicate.matchesBlocks(
+                                        new BlockPos(0, -1, 0),
+                                        Blocks.GRASS_BLOCK,
+                                        Blocks.DIRT,
+                                        Blocks.COARSE_DIRT,
+                                        Blocks.PODZOL,
+                                        Blocks.SAND,
+                                        Blocks.RED_SAND,
+                                        Blocks.GRAVEL
+                                )
+                        )
+                ));
 
     }
 

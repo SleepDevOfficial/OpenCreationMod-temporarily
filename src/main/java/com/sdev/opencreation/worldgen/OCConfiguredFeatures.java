@@ -26,9 +26,7 @@ public class OCConfiguredFeatures {
 
         register(context, TEST_KEY, Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(
-                        3, // максимум попыток (<=3 блока)
-                        7,
-                        3,
+                        3, 0, 0,
                         PlacementUtils.onlyWhenEmpty(
                                 Feature.SIMPLE_BLOCK,
                                 new SimpleBlockConfiguration(
