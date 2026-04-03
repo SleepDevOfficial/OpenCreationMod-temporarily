@@ -1,5 +1,6 @@
 package com.sdev.opencreation;
 
+import com.sdev.opencreation.command.OCChunkCommand;
 import com.sdev.opencreation.events.AnvilRepairHandler;
 import com.sdev.opencreation.events.BreakVBlocks;
 import com.sdev.opencreation.events.ClientEvents;
@@ -8,6 +9,7 @@ import com.sdev.opencreation.screen.OpenCreationMenus;
 import com.sdev.opencreation.screen.testblock.TestBlockScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -35,7 +37,12 @@ public class OpenCreation {
         BLOCKS.register(modEventBus);
         BLOCK_ENTITIES.register(modEventBus);
         MENUS.register(modEventBus);
+        NeoForge.EVENT_BUS.addListener(this::onRegisterCommands);
         modEventBus.addListener(ClientEvents::registerScreens);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    private void onRegisterCommands(RegisterCommandsEvent event) {
+        OCChunkCommand.register(event.getDispatcher(), event.getBuildContext());
     }
 }
