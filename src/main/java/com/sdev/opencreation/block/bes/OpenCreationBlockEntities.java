@@ -9,6 +9,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.Supplier;
+
 public class OpenCreationBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, OpenCreation.MODID);
@@ -18,4 +20,12 @@ public class OpenCreationBlockEntities {
                     () -> BlockEntityType.Builder.of(
                             TestBlockEntity::new, OpenCreationBlocks.TEST_BLOCK.get()
                     ).build(null));
+
+    public static final Supplier<BlockEntityType<KaminiteBarrelEntity>> KAMINITE_BARREL =
+            BLOCK_ENTITIES.register("item_collector",
+                    () -> BlockEntityType.Builder.of(
+                            KaminiteBarrelEntity::new,
+                            OpenCreationBlocks.KAMINITE_BARREL.get()
+                    ).build(null));
+
 }

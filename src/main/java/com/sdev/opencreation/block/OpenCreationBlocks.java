@@ -1,6 +1,7 @@
 package com.sdev.opencreation.block;
 
 import com.sdev.opencreation.OpenCreation;
+import com.sdev.opencreation.block.custom.KaminiteBarrel;
 import com.sdev.opencreation.block.custom.TestBlock;
 import com.sdev.opencreation.item.OpenCreationItems;
 import net.minecraft.world.item.BlockItem;
@@ -20,6 +21,11 @@ public class OpenCreationBlocks {
     public static final DeferredBlock<Block>
             TEST_BLOCK = registerBlock("test_block",
             () -> new TestBlock(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block>
+            KAMINITE_BARREL = registerBlock("kaminite_barrel",
+            () -> new KaminiteBarrel(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops()));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
