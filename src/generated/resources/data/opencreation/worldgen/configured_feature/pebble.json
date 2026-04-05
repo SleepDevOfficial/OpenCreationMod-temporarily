@@ -6,9 +6,12 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:simple_state_provider",
+            "type": "minecraft:rotated_block_provider",
             "state": {
-              "Name": "opencreation:test_block"
+              "Name": "opencreation:pebble_block",
+              "Properties": {
+                "facing": "north"
+              }
             }
           }
         }

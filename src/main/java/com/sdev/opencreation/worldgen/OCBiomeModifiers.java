@@ -15,14 +15,20 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class OCBiomeModifiers {
 
-    public static final ResourceKey<BiomeModifier> ADD_TEST= registerKey("add_test");
+    public static final ResourceKey<BiomeModifier> ADD_PEBBLE = registerKey("add_pebble");
+    public static final ResourceKey<BiomeModifier> ADD_TWIG = registerKey("add_twig");
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-        context.register(ADD_TEST, new BiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_PEBBLE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(OCPlacedFeatures.TEST_PLACED_KEY)),
+                HolderSet.direct(placedFeatures.getOrThrow(OCPlacedFeatures.PEBBLE_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_TWIG, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(OCPlacedFeatures.TWIG_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
     }

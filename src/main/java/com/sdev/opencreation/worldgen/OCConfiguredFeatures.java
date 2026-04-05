@@ -20,18 +20,33 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import java.util.List;
 
 public class OCConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TEST_KEY = registerKey("test");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PEBBLE_KEY = registerKey("pebble");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TWIG_KEY = registerKey("twig");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        register(context, TEST_KEY, Feature.RANDOM_PATCH,
+        register(context, PEBBLE_KEY, Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(
                         3, 0, 0,
                         PlacementUtils.onlyWhenEmpty(
                                 Feature.SIMPLE_BLOCK,
                                 new SimpleBlockConfiguration(
                                         BlockStateProvider.simple(
-                                                OpenCreationBlocks.TEST_BLOCK.get().defaultBlockState()
+                                                OpenCreationBlocks.PEBBLE_BLOCK.get().defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+        );
+
+        register(context, TWIG_KEY, Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        3, 0, 0,
+                        PlacementUtils.onlyWhenEmpty(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(
+                                        BlockStateProvider.simple(
+                                                OpenCreationBlocks.TWIG_BLOCK.get().defaultBlockState()
                                         )
                                 )
                         )

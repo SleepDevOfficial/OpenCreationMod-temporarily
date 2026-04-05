@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "opencreation:blockbench/block/twig_block",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "opencreation:blockbench/block/twig_block",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "opencreation:blockbench/block/twig_block",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "opencreation:blockbench/block/twig_block",
+      "y": 270
+    }
+  }
+}

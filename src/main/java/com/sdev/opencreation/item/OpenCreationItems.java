@@ -19,7 +19,13 @@ public class OpenCreationItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
 
     public static final DeferredItem<Item>
+            DEBUG_TOAST = ITEMS.register("debug_toast",
+            () -> new Item(new Item.Properties())),
             FRAGMENTS_OF_STONES = ITEMS.register("fragments_of_stones",
+                    () -> new Item(new Item.Properties())),
+            TWIG = ITEMS.register("twig",
+                    () -> new Item(new Item.Properties())),
+            PEBBLE = ITEMS.register("pebble",
                     () -> new Item(new Item.Properties())),
             BLADE_OF_GRASS = ITEMS.register("blade_of_grass",
                     () -> new Item(new Item.Properties().stacksTo(96))),

@@ -1,5 +1,5 @@
 {
-  "feature": "opencreation:test",
+  "feature": "opencreation:pebble",
   "placement": [
     {
       "type": "minecraft:count",
@@ -21,7 +21,8 @@
             "type": "minecraft:matching_blocks",
             "blocks": [
               "minecraft:gravel",
-              "minecraft:sand"
+              "minecraft:sand",
+              "minecraft:red_sand"
             ],
             "offset": [
               0,

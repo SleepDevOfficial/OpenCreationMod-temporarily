@@ -21,14 +21,15 @@ import net.minecraft.world.level.levelgen.placement.*;
 import java.util.List;
 
 public class OCPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> TEST_PLACED_KEY = registerKey("test_placed");
+    public static final ResourceKey<PlacedFeature> PEBBLE_PLACED_KEY = registerKey("pebble_placed");
+    public static final ResourceKey<PlacedFeature> TWIG_PLACED_KEY = registerKey("twig_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context,
-                TEST_PLACED_KEY,
-                configuredFeatures.getOrThrow(OCConfiguredFeatures.TEST_KEY),
+                PEBBLE_PLACED_KEY,
+                configuredFeatures.getOrThrow(OCConfiguredFeatures.PEBBLE_KEY),
                 List.of(
                         CountPlacement.of(2),
                         InSquarePlacement.spread(),
@@ -54,6 +55,25 @@ public class OCPlacedFeatures {
                                 )
                         )
                 );
+
+        register(context,
+                TWIG_PLACED_KEY,
+                configuredFeatures.getOrThrow(OCConfiguredFeatures.TWIG_KEY),
+                List.of(
+                        CountPlacement.of(2),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BlockPredicateFilter.forPredicate(
+                                BlockPredicate.anyOf(
+                                        BlockPredicate.matchesTag(
+                                                new BlockPos(0, -1, 0),
+                                                BlockTags.DIRT
+
+                                        )
+                                )
+                        )
+                )
+        );
 
     }
 

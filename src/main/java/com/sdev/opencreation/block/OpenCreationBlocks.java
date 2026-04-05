@@ -3,6 +3,8 @@ package com.sdev.opencreation.block;
 import com.sdev.opencreation.OpenCreation;
 import com.sdev.opencreation.block.custom.KaminiteBarrel;
 import com.sdev.opencreation.block.custom.TestBlock;
+import com.sdev.opencreation.block.custom.pebble;
+import com.sdev.opencreation.block.custom.twig;
 import com.sdev.opencreation.item.OpenCreationItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,11 +22,14 @@ public class OpenCreationBlocks {
 
     public static final DeferredBlock<Block>
             TEST_BLOCK = registerBlock("test_block",
-            () -> new TestBlock(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops()));
-
-    public static final DeferredBlock<Block>
+                    () -> new TestBlock(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops())),
             KAMINITE_BARREL = registerBlock("kaminite_barrel",
-            () -> new KaminiteBarrel(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops()));
+                    () -> new KaminiteBarrel(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops())),
+            TWIG_BLOCK = registerBlock("twig_block",
+                    () -> new twig(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
+            PEBBLE_BLOCK = registerBlock("pebble_block",
+                    () -> new pebble(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

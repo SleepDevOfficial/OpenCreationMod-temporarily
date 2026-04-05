@@ -1,6 +1,7 @@
 package com.sdev.opencreation.datagen;
 
 import com.sdev.opencreation.block.OpenCreationBlocks;
+import com.sdev.opencreation.item.OpenCreationItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -26,16 +28,12 @@ public class OCBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        // Модификация лута камня
         dropSelf(OpenCreationBlocks.TEST_BLOCK.get());
-        // dropSelf(ModBlocks.MAGIC_BLOCK.get());
-
-        //this.add(Blocks.GRASS_BLOCK, block ->
-        //        createSingleItemTable(SleepProgressingItems.MINI_GRASS.get()));
-
-        //add(SleepProgressingBlocks.BISMUTH_DEEPSLATE_ORE.get(),
-        //        block -> createMultipleOreDrops(SleepProgressingBlocks.BISMUTH_DEEPSLATE_ORE.get(), ModItems.RAW_BISMUTH.get(), 2, 5));
-
+        dropSelf(OpenCreationBlocks.KAMINITE_BARREL.get());
+        add(OpenCreationBlocks.TWIG_BLOCK.get(), block ->
+                createSingleItemTable(OpenCreationItems.TWIG.get()));
+        add(OpenCreationBlocks.PEBBLE_BLOCK.get(), block ->
+                createSingleItemTable(OpenCreationItems.PEBBLE.get()));
     }
 
 
