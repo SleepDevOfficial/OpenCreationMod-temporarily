@@ -1,5 +1,6 @@
-// 1.21.1	2026-04-05T19:28:07.813865	Loot Tables
+// 1.21.1	2026-04-11T18:45:21.9904155	Loot Tables
 02a944e814017924d57c5655bcf161d678d1a575 data/opencreation/loot_table/blocks/kaminite_barrel.json
+f8e1de2475f7ebad5ffca9ebf6f0e4958b614ec4 data/opencreation/loot_table/blocks/kaminite_furnace_controller.json
 a4aadb457104e3f87cac9679a30bcb6660fc133f data/opencreation/loot_table/blocks/pebble_block.json
 fcb017e4c09cc7f5db13dbba03dcaef81b8e6578 data/opencreation/loot_table/blocks/test_block.json
 b94d2fa67cbf5ef35c372662b67cbf86cd830db5 data/opencreation/loot_table/blocks/twig_block.json

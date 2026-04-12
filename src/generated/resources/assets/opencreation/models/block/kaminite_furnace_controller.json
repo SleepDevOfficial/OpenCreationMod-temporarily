@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "opencreation:block/orientable/kaminite_furnace_controller/kaminite_furnace_controller_down",
+    "east": "opencreation:block/orientable/kaminite_furnace_controller/kaminite_furnace_controller_left",
+    "north": "opencreation:block/orientable/kaminite_furnace_controller/kaminite_furnace_controller_front",
+    "south": "opencreation:block/orientable/kaminite_furnace_controller/kaminite_furnace_controller_back",
+    "up": "opencreation:block/orientable/kaminite_furnace_controller/kaminite_furnace_controller_up",
+    "west": "opencreation:block/orientable/kaminite_furnace_controller/kaminite_furnace_controller_right"
+  }
+}

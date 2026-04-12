@@ -5,9 +5,8 @@ import com.sdev.opencreation.events.AnvilRepairHandler;
 import com.sdev.opencreation.events.BreakVBlocks;
 import com.sdev.opencreation.events.ClientEvents;
 import com.sdev.opencreation.events.FlintNotDrop;
-import com.sdev.opencreation.screen.OpenCreationMenus;
-import com.sdev.opencreation.screen.testblock.TestBlockScreen;
-import net.minecraft.client.gui.screens.MenuScreens;
+import com.sdev.opencreation.multiblock.OCMultiblockPatterns;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
@@ -38,11 +37,16 @@ public class OpenCreation {
         BLOCK_ENTITIES.register(modEventBus);
         MENUS.register(modEventBus);
         NeoForge.EVENT_BUS.addListener(this::onRegisterCommands);
+        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(ClientEvents::registerScreens);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void onRegisterCommands(RegisterCommandsEvent event) {
         OCChunkCommand.register(event.getDispatcher(), event.getBuildContext());
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(OCMultiblockPatterns::register);
     }
 }

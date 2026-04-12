@@ -30,6 +30,7 @@ public class OCBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(OpenCreationBlocks.TEST_BLOCK.get());
         dropSelf(OpenCreationBlocks.KAMINITE_BARREL.get());
+        dropSelf(OpenCreationBlocks.KAMINITE_FURNACE_CONTROLLER.get());
         add(OpenCreationBlocks.TWIG_BLOCK.get(), block ->
                 createSingleItemTable(OpenCreationItems.TWIG.get()));
         add(OpenCreationBlocks.PEBBLE_BLOCK.get(), block ->

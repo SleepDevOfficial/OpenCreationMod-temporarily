@@ -15,6 +15,7 @@ public class OpenCreationTags {
 
         public static final TagKey<Item>
                 PLANK = createTag("plank"),
+                BLUEPRINTS = createTag("blueprints"),
                 SHOVEL_HOE = createTag("shovel_hoe");
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(OpenCreation.MODID, name));

@@ -5,6 +5,9 @@ import com.sdev.opencreation.block.bes.KaminiteBarrelEntity;
 import com.sdev.opencreation.block.bes.OpenCreationBlockEntities;
 import com.sdev.opencreation.block.bes.TestBlockEntity;
 import com.sdev.opencreation.item.OpenCreationItems;
+import com.sdev.opencreation.util.OCHelpers;
+import com.sdev.researchcreation.research.PlayerResearchData;
+import com.sdev.researchcreation.research.ResearchSavedData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -57,90 +60,95 @@ public class KaminiteBarrel extends BaseEntityBlock {
         if (!(be instanceof KaminiteBarrelEntity barrel)) return InteractionResult.PASS;
 
         ItemStack held = player.getItemInHand(InteractionHand.MAIN_HAND);
+        PlayerResearchData researchData = ResearchSavedData.get(player.getServer()).get(player.getUUID());
 
-        if (player.isShiftKeyDown() && held.isEmpty()) {
-            barrel.giveToPlayer(player);
-            return InteractionResult.SUCCESS;
-        }
-
-        if (held.getItem() == Items.WATER_BUCKET && !player.isShiftKeyDown()) {
-            if (barrel.getWater() < KaminiteBarrelEntity.MAX_WATER) {
-                barrel.setWater(barrel.getWater() + 1000);
-
-                if (!player.isCreative()) {
-                    player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.BUCKET));
-                }
-
-                player.playSound(SoundEvents.BUCKET_EMPTY, 1f, 1f);
-                barrel.setChanged();
-            }
-            return InteractionResult.SUCCESS;
-        }
-
-        if (held.getItem() == Items.BUCKET) {
-            if (barrel.getWater() >= 1000) {
-                barrel.setWater(barrel.getWater() - 1000);
-
-                if (!player.isCreative()) {
-                    player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.WATER_BUCKET));
-                }
-
-                player.playSound(SoundEvents.BUCKET_FILL, 1f, 1f);
-                barrel.setChanged();
-            }
-            return InteractionResult.SUCCESS;
-        }
-
-        if (!player.isShiftKeyDown() && held.getItem() instanceof ShovelItem) {
-
-            if (barrel.getWater() >= 200 &&
-                    barrel.hasItem(Items.GUNPOWDER, 2) &&
-                    barrel.hasItem(Items.CLAY_BALL, 2) &&
-                    barrel.hasItem(Items.SAND, 3) &&
-                    barrel.hasItem(Items.GRAVEL, 3)) {
-
-                barrel.setWater(barrel.getWater() - 200);
-
-                barrel.removeItem(Items.GUNPOWDER, 2);
-                barrel.removeItem(Items.CLAY_BALL, 2);
-                barrel.removeItem(Items.SAND, 3);
-                barrel.removeItem(Items.GRAVEL, 3);
-
-                ItemStack result = new ItemStack(OpenCreationItems.KAMINITE_MIXTURE.get());
-
-                ItemStack remaining = insertItemIntoInventory(barrel.getInventory(), result);
-
-                if (!remaining.isEmpty()) {
-                    player.drop(remaining, false);
-                }
-
-                player.playSound(SoundEvents.GENERIC_EXTINGUISH_FIRE, 1f, 1f);
-                barrel.setChanged();
-
+        if (researchData.has("primitive_mixing")) {
+            if (player.isShiftKeyDown() && held.isEmpty()) {
+                barrel.giveToPlayer(player);
                 return InteractionResult.SUCCESS;
             }
 
-            return InteractionResult.SUCCESS;
-        }
+            if (held.getItem() == Items.WATER_BUCKET && !player.isShiftKeyDown()) {
+                if (barrel.getWater() < KaminiteBarrelEntity.MAX_WATER) {
+                    barrel.setWater(barrel.getWater() + 1000);
 
-        if (!held.isEmpty() && (held.getItem() == Items.SAND || held.getItem() == Items.GRAVEL || held.getItem() == Items.CLAY_BALL || held.getItem() == Items.GUNPOWDER)) {
-
-            ItemStackHandler inv = barrel.getInventory();
-            ItemStack remaining = insertItemIntoInventory(inv, held.copy());
-
-            if (remaining.getCount() < held.getCount()) {
-                if (!player.isCreative()) {
-                    if (remaining.isEmpty()) {
-                        player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
-                    } else {
-                        player.setItemInHand(InteractionHand.MAIN_HAND, remaining);
+                    if (!player.isCreative()) {
+                        player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.BUCKET));
                     }
-                }
 
-                player.playSound(SoundEvents.ITEM_PICKUP, 0.5f, 1f);
-                barrel.setChanged();
+                    player.playSound(SoundEvents.BUCKET_EMPTY, 1f, 1f);
+                    barrel.setChanged();
+                }
                 return InteractionResult.SUCCESS;
             }
+
+            if (held.getItem() == Items.BUCKET) {
+                if (barrel.getWater() >= 1000) {
+                    barrel.setWater(barrel.getWater() - 1000);
+
+                    if (!player.isCreative()) {
+                        player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.WATER_BUCKET));
+                    }
+
+                    player.playSound(SoundEvents.BUCKET_FILL, 1f, 1f);
+                    barrel.setChanged();
+                }
+                return InteractionResult.SUCCESS;
+            }
+
+            if (!player.isShiftKeyDown() && held.getItem() instanceof ShovelItem) {
+
+                if (barrel.getWater() >= 200 &&
+                        barrel.hasItem(Items.GUNPOWDER, 2) &&
+                        barrel.hasItem(Items.CLAY_BALL, 2) &&
+                        barrel.hasItem(Items.SAND, 3) &&
+                        barrel.hasItem(Items.GRAVEL, 3)) {
+
+                    barrel.setWater(barrel.getWater() - 200);
+
+                    barrel.removeItem(Items.GUNPOWDER, 2);
+                    barrel.removeItem(Items.CLAY_BALL, 2);
+                    barrel.removeItem(Items.SAND, 3);
+                    barrel.removeItem(Items.GRAVEL, 3);
+
+                    ItemStack result = new ItemStack(OpenCreationItems.KAMINITE_MIXTURE.get());
+
+                    ItemStack remaining = insertItemIntoInventory(barrel.getInventory(), result);
+
+                    if (!remaining.isEmpty()) {
+                        player.drop(remaining, false);
+                    }
+
+                    player.playSound(SoundEvents.GENERIC_EXTINGUISH_FIRE, 1f, 1f);
+                    barrel.setChanged();
+
+                    return InteractionResult.SUCCESS;
+                }
+
+                return InteractionResult.SUCCESS;
+            }
+
+            if (!held.isEmpty() && (held.getItem() == Items.SAND || held.getItem() == Items.GRAVEL || held.getItem() == Items.CLAY_BALL || held.getItem() == Items.GUNPOWDER)) {
+
+                ItemStackHandler inv = barrel.getInventory();
+                ItemStack remaining = insertItemIntoInventory(inv, held.copy());
+
+                if (remaining.getCount() < held.getCount()) {
+                    if (!player.isCreative()) {
+                        if (remaining.isEmpty()) {
+                            player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+                        } else {
+                            player.setItemInHand(InteractionHand.MAIN_HAND, remaining);
+                        }
+                    }
+
+                    player.playSound(SoundEvents.ITEM_PICKUP, 0.5f, 1f);
+                    barrel.setChanged();
+                    return InteractionResult.SUCCESS;
+                }
+            }
+        } else {
+            OCHelpers.Stupid(player);
         }
 
         return InteractionResult.PASS;

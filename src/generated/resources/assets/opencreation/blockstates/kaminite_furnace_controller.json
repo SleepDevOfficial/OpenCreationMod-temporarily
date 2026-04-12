@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "opencreation:block/kaminite_furnace_controller",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "opencreation:block/kaminite_furnace_controller"
+    },
+    "facing=south": {
+      "model": "opencreation:block/kaminite_furnace_controller",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "opencreation:block/kaminite_furnace_controller",
+      "y": 270
+    }
+  }
+}

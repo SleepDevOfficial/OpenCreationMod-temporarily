@@ -1,7 +1,7 @@
-// 1.21.1	2026-04-05T19:44:28.2771186	Registries
+// 1.21.1	2026-04-11T18:45:21.9924154	Registries
 6c5aed8cf829f27b0bf7efe563f33453a9e42cc7 data/opencreation/neoforge/biome_modifier/add_pebble.json
 614dd5cc5ef062bbc8b16feb85c524336c6eaa84 data/opencreation/neoforge/biome_modifier/add_twig.json
-03a1c52747ed935f3e427221647efd3bb40e67cd data/opencreation/worldgen/configured_feature/pebble.json
-24c376f319978585e8e166abf92106cc9a84aa31 data/opencreation/worldgen/configured_feature/twig.json
+c77075dc51d61d9e67eacd49a1d6db41956358c1 data/opencreation/worldgen/configured_feature/pebble.json
+c8daf36e4eefb747f165c4773bb376d81f13e08e data/opencreation/worldgen/configured_feature/twig.json
 9322d8607b7eba4e1c819076bc159a6652ccec7d data/opencreation/worldgen/placed_feature/pebble_placed.json
 5da0b39886899e5a583fd9689dd03cec25885d12 data/opencreation/worldgen/placed_feature/twig_placed.json

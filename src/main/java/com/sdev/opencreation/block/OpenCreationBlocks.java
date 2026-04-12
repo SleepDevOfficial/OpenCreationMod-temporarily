@@ -6,6 +6,7 @@ import com.sdev.opencreation.block.custom.TestBlock;
 import com.sdev.opencreation.block.custom.pebble;
 import com.sdev.opencreation.block.custom.twig;
 import com.sdev.opencreation.item.OpenCreationItems;
+import com.sdev.opencreation.multiblock.kaminite_furnace.KaminiteFurnaceController;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -30,6 +31,9 @@ public class OpenCreationBlocks {
             PEBBLE_BLOCK = registerBlock("pebble_block",
                     () -> new pebble(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<Block>
+            KAMINITE_FURNACE_CONTROLLER = registerBlock("kaminite_furnace_controller",
+            () -> new KaminiteFurnaceController(BlockBehaviour.Properties.of()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
