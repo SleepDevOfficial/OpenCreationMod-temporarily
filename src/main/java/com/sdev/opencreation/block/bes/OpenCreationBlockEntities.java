@@ -2,8 +2,6 @@ package com.sdev.opencreation.block.bes;
 
 import com.sdev.opencreation.OpenCreation;
 import com.sdev.opencreation.block.OpenCreationBlocks;
-import com.sdev.opencreation.block.custom.TestBlock;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -27,5 +25,9 @@ public class OpenCreationBlockEntities {
                             KaminiteBarrelEntity::new,
                             OpenCreationBlocks.KAMINITE_BARREL.get()
                     ).build(null));
-
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DraftTablePrimitiveEntity>> DRAFT_TABLE =
+            BLOCK_ENTITIES.register("draft_table",
+                    () -> BlockEntityType.Builder.of(
+                            DraftTablePrimitiveEntity::new, OpenCreationBlocks.DRAFT_TABLE_PRIMITIVE.get()
+                    ).build(null));
 }

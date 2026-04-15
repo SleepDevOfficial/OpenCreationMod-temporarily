@@ -1,5 +1,7 @@
 package com.sdev.opencreation.item;
 
+import com.sdev.opencreation.blueprint.BlueprintData;
+import com.sdev.opencreation.data.OCDataComponents;
 import com.sdev.opencreation.item.custom.*;
 import com.sdev.opencreation.util.OpenCreationTags;
 import com.sdev.opencreation.util.OpenCreationTiers;
@@ -20,7 +22,15 @@ public class OpenCreationItems {
 
     public static final DeferredItem<Item>
             DEBUG_TOAST = ITEMS.register("debug_toast",
-            () -> new Item(new Item.Properties())),
+                    () -> new Item(new Item.Properties())),
+            PENCIL = ITEMS.register("pencil",
+                    () -> new Item(new Item.Properties().durability(2))),
+            RULER = ITEMS.register("ruler",
+                    () -> new Item(new Item.Properties().durability(4))),
+            DRAFTING_COMPASS = ITEMS.register("drafting_compass",
+                    () -> new Item(new Item.Properties().durability(8))),
+            BLUEPRINT = ITEMS.register("blueprint",
+                    () -> new BlueprintItem(new Item.Properties().component(OCDataComponents.BLUEPRINT_DATA.get(), new BlueprintData("empty_type", "Пустой чертеж")))),
             FRAGMENTS_OF_STONES = ITEMS.register("fragments_of_stones",
                     () -> new Item(new Item.Properties())),
             TWIG = ITEMS.register("twig",

@@ -1,10 +1,7 @@
 package com.sdev.opencreation.block;
 
 import com.sdev.opencreation.OpenCreation;
-import com.sdev.opencreation.block.custom.KaminiteBarrel;
-import com.sdev.opencreation.block.custom.TestBlock;
-import com.sdev.opencreation.block.custom.pebble;
-import com.sdev.opencreation.block.custom.twig;
+import com.sdev.opencreation.block.custom.*;
 import com.sdev.opencreation.item.OpenCreationItems;
 import com.sdev.opencreation.multiblock.kaminite_furnace.KaminiteFurnaceController;
 import net.minecraft.world.item.BlockItem;
@@ -29,7 +26,9 @@ public class OpenCreationBlocks {
             TWIG_BLOCK = registerBlock("twig_block",
                     () -> new twig(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
             PEBBLE_BLOCK = registerBlock("pebble_block",
-                    () -> new pebble(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
+                    () -> new pebble(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
+            DRAFT_TABLE_PRIMITIVE = registerBlock("draft_table_primitive",
+                    () -> new DraftTablePrimitive(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block>
             KAMINITE_FURNACE_CONTROLLER = registerBlock("kaminite_furnace_controller",
