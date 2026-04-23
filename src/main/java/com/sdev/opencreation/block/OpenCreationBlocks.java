@@ -28,7 +28,9 @@ public class OpenCreationBlocks {
             PEBBLE_BLOCK = registerBlock("pebble_block",
                     () -> new pebble(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
             DRAFT_TABLE_PRIMITIVE = registerBlock("draft_table_primitive",
-                    () -> new DraftTablePrimitive(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
+                    () -> new DraftTablePrimitive(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
+            RECIPE_TABLE = registerBlock("recipe_table_primitive",
+                    () -> new RecipeTable(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block>
             KAMINITE_FURNACE_CONTROLLER = registerBlock("kaminite_furnace_controller",

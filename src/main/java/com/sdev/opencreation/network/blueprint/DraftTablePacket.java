@@ -1,19 +1,14 @@
-package com.sdev.opencreation.network.draft_table;
+package com.sdev.opencreation.network.blueprint;
 
 import com.sdev.opencreation.screen.draft_table.DraftTableMenu;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import com.sdev.opencreation.screen.draft_table.DraftTableMenu;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 public record DraftTablePacket(int direction) implements CustomPacketPayload {
 

@@ -1,7 +1,6 @@
 package com.sdev.opencreation.data;
 
 import com.sdev.opencreation.OpenCreation;
-import com.sdev.opencreation.blueprint.BlueprintData;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.neoforge.registries.DeferredHolder;

@@ -1,4 +1,4 @@
-package com.sdev.opencreation.blueprint;
+package com.sdev.opencreation.data;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

@@ -1,15 +1,16 @@
-package com.sdev.opencreation.block.bes;
+package com.sdev.opencreation.block;
 
 import com.sdev.opencreation.OpenCreation;
-import com.sdev.opencreation.block.OpenCreationBlocks;
+import com.sdev.opencreation.block.bes.*;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class OpenCreationBlockEntities {
+public class OCBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, OpenCreation.MODID);
 
@@ -30,4 +31,10 @@ public class OpenCreationBlockEntities {
                     () -> BlockEntityType.Builder.of(
                             DraftTablePrimitiveEntity::new, OpenCreationBlocks.DRAFT_TABLE_PRIMITIVE.get()
                     ).build(null));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RecipeTableEntity>> RECIPE_TABLE =
+            BLOCK_ENTITIES.register("recipe_table",
+                    () -> BlockEntityType.Builder.of(
+                            RecipeTableEntity::new, OpenCreationBlocks.RECIPE_TABLE.get()
+                    ).build(null));
+
 }

@@ -1,8 +1,9 @@
 package com.sdev.opencreation.item;
 
-import com.sdev.opencreation.blueprint.BlueprintData;
+import com.sdev.opencreation.data.BlueprintData;
 import com.sdev.opencreation.data.OCDataComponents;
 import com.sdev.opencreation.item.custom.*;
+import com.sdev.opencreation.item.custom.tools.*;
 import com.sdev.opencreation.util.OpenCreationTags;
 import com.sdev.opencreation.util.OpenCreationTiers;
 import com.sdev.opencreation.util.RepairDefinition;
@@ -24,13 +25,15 @@ public class OpenCreationItems {
             DEBUG_TOAST = ITEMS.register("debug_toast",
                     () -> new Item(new Item.Properties())),
             PENCIL = ITEMS.register("pencil",
-                    () -> new Item(new Item.Properties().durability(2))),
+                    () -> new RepirableItem(new Item.Properties().durability(2), Items.COAL, null)),
             RULER = ITEMS.register("ruler",
-                    () -> new Item(new Item.Properties().durability(4))),
+                    () -> new RepirableItem(new Item.Properties().durability(4), null, OpenCreationTags.Items.PLANK)),
             DRAFTING_COMPASS = ITEMS.register("drafting_compass",
-                    () -> new Item(new Item.Properties().durability(8))),
+                    () -> new RepirableItem(new Item.Properties().durability(8), Items.COPPER_INGOT, null)),
             BLUEPRINT = ITEMS.register("blueprint",
                     () -> new BlueprintItem(new Item.Properties().component(OCDataComponents.BLUEPRINT_DATA.get(), new BlueprintData("empty_type", "Пустой чертеж")))),
+            RECIPE = ITEMS.register("recipe",
+                    () -> new BlueprintItem(new Item.Properties().component(OCDataComponents.BLUEPRINT_DATA.get(), new BlueprintData("empty_type", "Пустой рецепт")))),
             FRAGMENTS_OF_STONES = ITEMS.register("fragments_of_stones",
                     () -> new Item(new Item.Properties())),
             TWIG = ITEMS.register("twig",
@@ -51,6 +54,8 @@ public class OpenCreationItems {
                     () -> new Item(new Item.Properties().stacksTo(1))),
             IMPROVED_PRIMITIVE_WEDGE = ITEMS.register("improved_primitive_wedge",
                     () -> new Item(new Item.Properties().stacksTo(1))),
+            PRIMITIVE_CAMPFIRE = ITEMS.register("primitive_campfire",
+                    () -> new PrimitiveCampfire(new Item.Properties())),
             BARK = ITEMS.register("bark",
                     () -> new Item(new Item.Properties())),
             OAK_PLANK = ITEMS.register("oak_plank",

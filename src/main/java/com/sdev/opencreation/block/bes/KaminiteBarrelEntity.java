@@ -1,21 +1,16 @@
 package com.sdev.opencreation.block.bes;
 
+import com.sdev.opencreation.block.OCBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
-import net.minecraft.world.Containers;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
 import net.neoforged.neoforge.items.ItemStackHandler;
-
-import java.util.List;
 
 public class KaminiteBarrelEntity extends BlockEntity {
 
@@ -24,7 +19,7 @@ public class KaminiteBarrelEntity extends BlockEntity {
     public int getWater() { return waterAmount; }
     public void setWater(int amount) { waterAmount = Mth.clamp(amount, 0, MAX_WATER); }
     public KaminiteBarrelEntity(BlockPos pos, BlockState state) {
-        super(OpenCreationBlockEntities.KAMINITE_BARREL.get(), pos, state);
+        super(OCBlockEntities.KAMINITE_BARREL.get(), pos, state);
     }
 
     private final ItemStackHandler inventory = new ItemStackHandler(5);

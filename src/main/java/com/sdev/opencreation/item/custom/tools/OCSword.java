@@ -1,22 +1,22 @@
-package com.sdev.opencreation.item.custom;
+package com.sdev.opencreation.item.custom.tools;
 
 import com.sdev.opencreation.events.IStageRepairable;
 import com.sdev.opencreation.util.RepairDefinition;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.component.CustomData;
 
-public class OCHoe extends HoeItem implements IStageRepairable {
+public class OCSword extends SwordItem implements IStageRepairable {
 
     private final Tier tier;
     private final RepairDefinition repair;
 
     private static final String STAGE_KEY = "RepairStage";
 
-    public OCHoe(Tier tier, Properties props, RepairDefinition repair) {
+    public OCSword(Tier tier, Properties props, RepairDefinition repair) {
         super(tier, props);
         this.repair = repair != null ? repair : RepairDefinition.tier();
         this.tier = tier;

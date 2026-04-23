@@ -1,8 +1,8 @@
-package com.sdev.opencreation.screen.draft_table;
+package com.sdev.opencreation.screen.recipe_table;
 
-import com.sdev.opencreation.block.custom.DraftTablePrimitive;
+import com.sdev.opencreation.block.custom.RecipeTable;
 import com.sdev.opencreation.data.BlueprintData;
-import com.sdev.opencreation.blueprint.BlueprintRegistry;
+import com.sdev.opencreation.blueprint.RecipeRegistry;
 import com.sdev.opencreation.data.OCDataComponents;
 import com.sdev.opencreation.item.OpenCreationItems;
 import com.sdev.opencreation.screen.OpenCreationMenus;
@@ -19,13 +19,13 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
-public class DraftTableMenu extends AbstractContainerMenu {
+public class RecipeTableMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerLevelAccess access;
     private final DataSlot selectedIndexData = DataSlot.shared(new int[]{0}, 0);
 
-    public DraftTableMenu(int id, Inventory playerInventory, Container container, ContainerLevelAccess access) {
-        super(OpenCreationMenus.DRAFT_TABLE_MENU.get(), id);
+    public RecipeTableMenu(int id, Inventory playerInventory, Container container, ContainerLevelAccess access) {
+        super(OpenCreationMenus.RECIPE_TABLE_MENU.get(), id);
 
         this.container = container;
         this.access = access;
@@ -43,7 +43,7 @@ public class DraftTableMenu extends AbstractContainerMenu {
 
     }
 
-    public DraftTableMenu(int id, Inventory playerInventory) {
+    public RecipeTableMenu(int id, Inventory playerInventory) {
         this(id, playerInventory, new SimpleContainer(5), ContainerLevelAccess.NULL);
     }
 
@@ -62,11 +62,11 @@ public class DraftTableMenu extends AbstractContainerMenu {
     }
 
     public void next() {
-        selectedIndexData.set((selectedIndexData.get() + 1) % BlueprintRegistry.getTypes().size());
+        selectedIndexData.set((selectedIndexData.get() + 1) % RecipeRegistry.getTypes().size());
     }
 
     public void prev() {
-        int size = BlueprintRegistry.getTypes().size();
+        int size = RecipeRegistry.getTypes().size();
         selectedIndexData.set((selectedIndexData.get() - 1 + size) % size);
     }
 
@@ -77,7 +77,7 @@ public class DraftTableMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return access.evaluate((level, pos) ->
-                level.getBlockState(pos).getBlock() instanceof DraftTablePrimitive &&
+                level.getBlockState(pos).getBlock() instanceof RecipeTable &&
                         player.distanceToSqr(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5) <= 64.0, true);
     }
 
@@ -125,11 +125,11 @@ public class DraftTableMenu extends AbstractContainerMenu {
         if (pencil.isEmpty() || ruler.isEmpty() || compass.isEmpty()) return;
         if (paper.isEmpty()) return;
 
-        BlueprintData data = BlueprintRegistry.getTypes().get(getSelectedIndex());
+        BlueprintData data = RecipeRegistry.getTypes().get(getSelectedIndex());
 
         // создаем чертеж
-        ItemStack blueprint = new ItemStack(OpenCreationItems.BLUEPRINT.get());
-        blueprint.set(OCDataComponents.BLUEPRINT_DATA.get(), data);
+        ItemStack recipe = new ItemStack(OpenCreationItems.RECIPE.get());
+        recipe.set(OCDataComponents.BLUEPRINT_DATA.get(), data);
 
         // уменьшаем бумагу
         paper.shrink(1);
@@ -139,7 +139,7 @@ public class DraftTableMenu extends AbstractContainerMenu {
         damageTool(ruler, player, 1);
         damageTool(compass, player, 2);
 
-        container.setItem(4, blueprint);
+        container.setItem(4, recipe);
         container.setChanged();
     }
 

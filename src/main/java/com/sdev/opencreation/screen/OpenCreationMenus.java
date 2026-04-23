@@ -2,6 +2,7 @@ package com.sdev.opencreation.screen;
 
 import com.sdev.opencreation.OpenCreation;
 import com.sdev.opencreation.screen.draft_table.DraftTableMenu;
+import com.sdev.opencreation.screen.recipe_table.RecipeTableMenu;
 import com.sdev.opencreation.screen.testblock.TestBlockMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.flag.FeatureFlags;
@@ -19,4 +20,7 @@ public class OpenCreationMenus {
     public static final Supplier<MenuType<DraftTableMenu>> DRAFT_TABLE_MENU =
             MENUS.register("draft_table_menu",
                     () -> new MenuType<>(DraftTableMenu::new, FeatureFlags.DEFAULT_FLAGS));
+    public static final Supplier<MenuType<RecipeTableMenu>> RECIPE_TABLE_MENU =
+            MENUS.register("recipe_table_menu",
+                    () -> new MenuType<>(RecipeTableMenu::new, FeatureFlags.DEFAULT_FLAGS));
 }

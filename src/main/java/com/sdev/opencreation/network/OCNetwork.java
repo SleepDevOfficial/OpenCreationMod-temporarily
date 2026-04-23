@@ -1,6 +1,7 @@
 package com.sdev.opencreation.network;
 
-import com.sdev.opencreation.network.draft_table.DraftTablePacket;
+import com.sdev.opencreation.network.blueprint.DraftTablePacket;
+import com.sdev.opencreation.network.blueprint.RecipeTablePacket;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
@@ -17,6 +18,12 @@ public class OCNetwork {
                 DraftTablePacket.TYPE,
                 DraftTablePacket.CODEC,
                 DraftTablePacket::handle
+        );
+        
+        registrar.playToServer(
+                RecipeTablePacket.TYPE,
+                RecipeTablePacket.CODEC,
+                RecipeTablePacket::handle
         );
     }
 

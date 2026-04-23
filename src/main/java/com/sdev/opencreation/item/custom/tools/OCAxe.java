@@ -1,4 +1,4 @@
-package com.sdev.opencreation.item.custom;
+package com.sdev.opencreation.item.custom.tools;
 
 import com.sdev.opencreation.events.IStageRepairable;
 import com.sdev.opencreation.item.OpenCreationItems;

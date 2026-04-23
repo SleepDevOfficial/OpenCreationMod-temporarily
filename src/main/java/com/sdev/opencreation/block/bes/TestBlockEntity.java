@@ -1,6 +1,6 @@
 package com.sdev.opencreation.block.bes;
 
-import com.sdev.opencreation.OpenCreation;
+import com.sdev.opencreation.block.OCBlockEntities;
 import com.sdev.opencreation.util.OpenCreationTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -32,7 +32,7 @@ public class TestBlockEntity extends BlockEntity {
     private int progress;
 
     public TestBlockEntity(BlockPos pos, BlockState state) {
-        super(OpenCreationBlockEntities.TEST_BLOCK.get(), pos, state);
+        super(OCBlockEntities.TEST_BLOCK.get(), pos, state);
     }
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(TOTAL_SLOTS) {

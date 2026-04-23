@@ -1,22 +1,22 @@
-package com.sdev.opencreation.item.custom;
+package com.sdev.opencreation.item.custom.tools;
 
 import com.sdev.opencreation.events.IStageRepairable;
 import com.sdev.opencreation.util.RepairDefinition;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.component.CustomData;
 
-public class OCPickaxe extends PickaxeItem implements IStageRepairable {
+public class OCShovel extends ShovelItem implements IStageRepairable {
 
     private final Tier tier;
     private final RepairDefinition repair;
 
     private static final String STAGE_KEY = "RepairStage";
 
-    public OCPickaxe(Tier tier, Properties props, RepairDefinition repair) {
+    public OCShovel(Tier tier, Properties props, RepairDefinition repair) {
         super(tier, props);
         this.repair = repair != null ? repair : RepairDefinition.tier();
         this.tier = tier;

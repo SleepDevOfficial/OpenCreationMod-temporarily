@@ -2,10 +2,7 @@ package com.sdev.opencreation;
 
 import com.sdev.opencreation.command.OCChunkCommand;
 import com.sdev.opencreation.command.OCDataCommand;
-import com.sdev.opencreation.events.AnvilRepairHandler;
-import com.sdev.opencreation.events.BreakVBlocks;
-import com.sdev.opencreation.events.ClientEvents;
-import com.sdev.opencreation.events.FlintNotDrop;
+import com.sdev.opencreation.events.*;
 import com.sdev.opencreation.multiblock.OCMultiblockPatterns;
 import com.sdev.opencreation.network.OCNetwork;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -20,7 +17,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 
 import static com.sdev.opencreation.block.OpenCreationBlocks.BLOCKS;
-import static com.sdev.opencreation.block.bes.OpenCreationBlockEntities.BLOCK_ENTITIES;
+import static com.sdev.opencreation.block.OCBlockEntities.BLOCK_ENTITIES;
 import static com.sdev.opencreation.creativetab.GeneralTab.CREATIVE_MODE_TABS;
 import static com.sdev.opencreation.data.OCDataComponents.DATA_COMPONENTS;
 import static com.sdev.opencreation.item.OpenCreationItems.ITEMS;
@@ -39,6 +36,7 @@ public class OpenCreation {
         NeoForge.EVENT_BUS.addListener(AnvilRepairHandler::onAnvilUpdate);
         NeoForge.EVENT_BUS.register(BreakVBlocks.class);
         NeoForge.EVENT_BUS.register(FlintNotDrop.class);
+        NeoForge.EVENT_BUS.register(CampfirePutOut.class);
         BLOCKS.register(modEventBus);
         BLOCK_ENTITIES.register(modEventBus);
         MENUS.register(modEventBus);

@@ -5,16 +5,16 @@ import com.sdev.opencreation.data.BlueprintData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlueprintRegistry {
+public class RecipeRegistry {
 
-    private static final List<BlueprintData> BLUEPRINT_TYPES = new ArrayList<>();
+    private static final List<BlueprintData> RECIPE_TYPES = new ArrayList<>();
 
     static {
-        addType("basic_gear", "Базовая шестерня");
-        addType("advanced_gear", "Продвинутая шестерня");
+        addType("basic_gear", "Базовая шsadadестерня");
+        addType("advanced_gear", "Продвинутаadasdя шестерня");
         addType("iron_plate", "Железная пластина");
         addType("gold_plate", "Золотая пластина");
-        addType("diamond_blade", "Алмазное лезвие");
+        addType("diamond_blade", "Алмазное adasdлезвие");
         addType("stone_brick", "Каменный кирпич");
         addType("redstone_circuit", "Редстоун схема");
         addType("copper_wire", "Медная проволока");
@@ -23,10 +23,10 @@ public class BlueprintRegistry {
     }
 
     private static void addType(String key, String name) {
-        BLUEPRINT_TYPES.add(new BlueprintData(key, name));
+        RECIPE_TYPES.add(new BlueprintData(key, name));
     }
 
     public static List<BlueprintData> getTypes() {
-        return BLUEPRINT_TYPES;
+        return RECIPE_TYPES;
     }
 }

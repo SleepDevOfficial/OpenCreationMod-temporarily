@@ -1,8 +1,8 @@
 package com.sdev.opencreation.block.bes;
 
 import com.sdev.opencreation.block.OCBlockEntities;
-import com.sdev.opencreation.block.inv.DraftTableInventory;
-import com.sdev.opencreation.screen.draft_table.DraftTableMenu;
+import com.sdev.opencreation.block.inv.RecipeTableInventory;
+import com.sdev.opencreation.screen.recipe_table.RecipeTableMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-public class DraftTablePrimitiveEntity extends BlockEntity implements MenuProvider {
+public class RecipeTableEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler inventory = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -24,10 +24,10 @@ public class DraftTablePrimitiveEntity extends BlockEntity implements MenuProvid
         }
     };
 
-    private final DraftTableInventory containerWrapper = new DraftTableInventory(inventory, this::setChanged);
+    private final RecipeTableInventory containerWrapper = new RecipeTableInventory(inventory, this::setChanged);
 
-    public DraftTablePrimitiveEntity(BlockPos pos, BlockState state) {
-        super(OCBlockEntities.DRAFT_TABLE.get(), pos, state);
+    public RecipeTableEntity(BlockPos pos, BlockState state) {
+        super(OCBlockEntities.RECIPE_TABLE.get(), pos, state);
     }
 
     public ItemStackHandler getInventory() {
@@ -36,12 +36,12 @@ public class DraftTablePrimitiveEntity extends BlockEntity implements MenuProvid
 
     @Override
     public Component getDisplayName() {
-        return Component.literal("Примитивный стол чертежника");
+        return Component.literal("Стол рецептов");
     }
 
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory playerInventory, Player player) {
-        return new DraftTableMenu(
+        return new RecipeTableMenu(
                 id,
                 playerInventory,
                 containerWrapper,

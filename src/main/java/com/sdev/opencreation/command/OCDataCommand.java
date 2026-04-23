@@ -2,7 +2,7 @@ package com.sdev.opencreation.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
-import com.sdev.opencreation.blueprint.BlueprintData;
+import com.sdev.opencreation.data.BlueprintData;
 import com.sdev.opencreation.data.OCDataComponents;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;

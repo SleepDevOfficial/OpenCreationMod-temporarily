@@ -1,5 +1,102 @@
 {
   "itemGroup.opencreation": "OpenCreation",
-  "item.opencreation.fragment_of_stones": "Обломки камней"
+  "item.opencreation.fragments_of_stones": "Осколки камня",
+  "item.opencreation.blade_of_grass": "Травинка",
+  "item.opencreation.latex": "Латекс",
+  "item.opencreation.axe_head": "Головка топора",
+  "item.opencreation.primitive_handle": "Примитивная рукоять",
+  "item.opencreation.improved_primitive_handle": "Улучшенная примитивная рукоять",
+  "item.opencreation.primitive_wedge": "Головка примитивного топора",
+  "item.opencreation.improved_primitive_wedge": "Улучшенный примитивный клин",
+  "item.opencreation.bark": "Кора",
+
+  "item.opencreation.oak_plank": "Дубовая доска",
+  "item.opencreation.spruce_plank": "Еловая доска",
+  "item.opencreation.birch_plank": "Берёзовая доска",
+  "item.opencreation.jungle_plank": "Доска тропического дерева",
+  "item.opencreation.acacia_plank": "Акациевая доска",
+  "item.opencreation.dark_oak_plank": "Доска тёмного дуба",
+  "item.opencreation.mangrove_plank": "Мангровая доска",
+  "item.opencreation.cherry_plank": "Вишнёвая доска",
+  "item.opencreation.bamboo_plank": "Бамбуковая доска",
+  "item.opencreation.crimson_plank": "Багровая доска",
+  "item.opencreation.warped_plank": "Искажённая доска",
+
+  "item.opencreation.kaminite_mixture": "Каминитовая смесь",
+  "item.opencreation.kaminite": "Каминит",
+  "item.opencreation.dried_bunch_of_grass": "Сушёный пучок травы",
+
+  "item.opencreation.crushed_granite": "Дроблёный гранит",
+  "item.opencreation.crushed_diorite": "Дроблёный диорит",
+  "item.opencreation.crushed_deepslate": "Дроблёный глубинный сланец",
+  "item.opencreation.crushed_andesite": "Дроблёный андезит",
+  "item.opencreation.crushed_basalt": "Дроблёный базальт",
+  "item.opencreation.crushed_blackstone": "Дроблёный чернит",
+
+  "item.opencreation.granite_alloy": "Гранитный сплав",
+  "item.opencreation.diorite_alloy": "Диоритовый сплав",
+  "item.opencreation.deepslate_alloy": "Сплав глубинного сланца",
+  "item.opencreation.basalt_alloy": "Базальтовый сплав",
+  "item.opencreation.blackstone_alloy": "Чернитовый сплав",
+
+  "item.opencreation.granite_body_frame": "Гранитный каркас",
+  "item.opencreation.diorite_body_frame": "Диоритовый каркас",
+  "item.opencreation.deepslate_body_frame": "Каркас из глубинного сланца",
+  "item.opencreation.andesite_body_frame": "Андезитовый каркас",
+  "item.opencreation.basalt_body_frame": "Базальтовый каркас",
+  "item.opencreation.blackstone_body_frame": "Чернитовый каркас",
+
+  "item.opencreation.saw_blade": "Пильное полотно",
+  "item.opencreation.latex_sheet": "Латексный лист",
+  "item.opencreation.hot_rubber": "Горячая резина",
+  "item.opencreation.huge_iron_sheet": "Большой железный лист",
+  "item.opencreation.textolite": "Текстолит",
+
+  "item.opencreation.redstone_chip": "Редстоуновый чип",
+  "item.opencreation.lapis_chip": "Лазуритовый чип",
+  "item.opencreation.modified_redstone_chip": "Модифицированный редстоуновый чип",
+  "item.opencreation.modified_lapis_chip": "Модифицированный лазуритовый чип",
+
+  "item.opencreation.flasks": "Колбы",
+  "item.opencreation.mercury": "Ртуть",
+  "item.opencreation.mercury_lamp": "Ртутная лампа",
+  "item.opencreation.quartz_lamp": "Кварцевая лампа",
+  "item.opencreation.cinnabar": "Киноварь",
+
+  "item.opencreation.hydrocarbon_fibers": "Углеводородные волокна",
+  "item.opencreation.hydrocarbon_composite": "Углеводородный композит",
+  "item.opencreation.resistor": "Резистор",
+  "item.opencreation.magnetic_steel": "Магнитная сталь",
+  "item.opencreation.precious_metal": "Драгоценный металл",
+  "item.opencreation.wrought_iron": "Кованое железо",
+
+  "item.opencreation.deepslate_shovel_hoe": "Лопата-мотыга из глубинного сланца",
+  "item.opencreation.blackstone_shovel_hoe": "Лопата-мотыга из чернита",
+  "item.opencreation.steel_shovel_hoe": "Стальная лопата-мотыга",
+
+  "item.opencreation.primitive_axe": "Примитивный топор",
+  "item.opencreation.improved_axe": "Улучшенный топор",
+  "item.opencreation.kaminite_axe": "Каминитовый топор",
+  "item.opencreation.andesite_axe": "Андезитовый топор",
+  "item.opencreation.basalt_axe": "Базальтовый топор",
+  "item.opencreation.wrought_iron_axe": "Топор из кованого железа",
+
+  "item.opencreation.primitive_pickaxe": "Примитивная кирка",
+  "item.opencreation.kaminite_pickaxe": "Каминитовая кирка",
+  "item.opencreation.diorite_pickaxe": "Диоритовая кирка",
+  "item.opencreation.blackstone_pickaxe": "Чернитовая кирка",
+  "item.opencreation.steel_pickaxe": "Стальная кирка",
+
+  "item.opencreation.primitive_shovel": "Примитивная лопата",
+  "item.opencreation.kaminite_shovel": "Каминитовая лопата",
+
+  "item.opencreation.primitive_sword": "Примитивный меч",
+  "item.opencreation.kaminite_sword": "Каминитовый меч",
+  "item.opencreation.granite_sword": "Гранитный меч",
+  "item.opencreation.basalt_sword": "Базальтовый меч",
+  "item.opencreation.wrought_iron_sword": "Меч из кованого железа",
+
+  "item.opencreation.kaminite_hoe": "Каминитовая мотыга"
+
 }
 
