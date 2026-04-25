@@ -31,10 +31,19 @@ public class OCBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(OpenCreationBlocks.TEST_BLOCK.get());
         dropSelf(OpenCreationBlocks.KAMINITE_BARREL.get());
         dropSelf(OpenCreationBlocks.KAMINITE_FURNACE_CONTROLLER.get());
+        dropSelf(OpenCreationBlocks.BARK_BLOCK.get());
+        dropSelf(OpenCreationBlocks.GRANITE_FRAME.get());
+        dropSelf(OpenCreationBlocks.DIORITE_FRAME.get());
+        dropSelf(OpenCreationBlocks.DEEPSLATE_FRAME.get());
+        dropSelf(OpenCreationBlocks.BASALT_FRAME.get());
+        dropSelf(OpenCreationBlocks.BLACKSTONE_FRAME.get());
+        dropSelf(OpenCreationBlocks.DRAFT_TABLE_PRIMITIVE.get());
+        dropSelf(OpenCreationBlocks.RECIPE_TABLE.get());
+
         add(OpenCreationBlocks.TWIG_BLOCK.get(), block ->
                 createSingleItemTable(OpenCreationItems.TWIG.get()));
         add(OpenCreationBlocks.PEBBLE_BLOCK.get(), block ->
-                createSingleItemTable(OpenCreationItems.PEBBLE.get()));
+                createSingleItemTable(OpenCreationItems.FRAGMENTS_OF_STONES.get()));
     }
 
 
@@ -46,7 +55,6 @@ public class OCBlockLootTableProvider extends BlockLootSubProvider {
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
                         .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
-
 
 
     @Override

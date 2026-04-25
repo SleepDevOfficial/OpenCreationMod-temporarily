@@ -32,6 +32,12 @@ public class OCBlockTagProvider extends BlockTagsProvider {
                 .remove(OpenCreationTags.Blocks.NEEDS_PRIMITIVE_TOOL);
 
         tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(OpenCreationBlocks.TEST_BLOCK.get());
+                .add(OpenCreationBlocks.TEST_BLOCK.get())
+                .add(OpenCreationBlocks.BARK_BLOCK.get())
+                .add(OpenCreationBlocks.GRANITE_FRAME.get())
+                .add(OpenCreationBlocks.DIORITE_FRAME.get())
+                .add(OpenCreationBlocks.DEEPSLATE_FRAME.get())
+                .add(OpenCreationBlocks.BASALT_FRAME.get())
+                .add(OpenCreationBlocks.BLACKSTONE_FRAME.get());
     }
 }

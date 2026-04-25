@@ -1,6 +1,14 @@
-// 1.21.1	2026-04-11T18:45:21.9904155	Loot Tables
+// 1.21.1	2026-04-25T18:56:24.3754752	Loot Tables
+8831f2bf6530e027cc92bb45dd554d076ad9f97b data/opencreation/loot_table/blocks/bark_block.json
+4a599e71399e58b6a5d31cc9898ebc2880b4fb07 data/opencreation/loot_table/blocks/basalt_frame.json
+b856ef6008636605c4c59ccfaed122cae54e4fd1 data/opencreation/loot_table/blocks/blackstone_frame.json
+cf4fa515fe5cfe6ab74a1e5dacc894de5705375c data/opencreation/loot_table/blocks/deepslate_frame.json
+57fe270a33a63d11a5a4dd77f42428eeb94138ce data/opencreation/loot_table/blocks/diorite_frame.json
+f7c30668fbe54561353d0cbf6206e773269bd9ea data/opencreation/loot_table/blocks/draft_table_primitive.json
+ac867174187b08043424fdbd35ed35e7e1b49851 data/opencreation/loot_table/blocks/granite_frame.json
 02a944e814017924d57c5655bcf161d678d1a575 data/opencreation/loot_table/blocks/kaminite_barrel.json
 f8e1de2475f7ebad5ffca9ebf6f0e4958b614ec4 data/opencreation/loot_table/blocks/kaminite_furnace_controller.json
-a4aadb457104e3f87cac9679a30bcb6660fc133f data/opencreation/loot_table/blocks/pebble_block.json
+ec6694279779c359840e11f0740abdc417b44c2b data/opencreation/loot_table/blocks/pebble_block.json
+a5e1b0cb5636a995577026bce4212f6646b77997 data/opencreation/loot_table/blocks/recipe_table_primitive.json
 fcb017e4c09cc7f5db13dbba03dcaef81b8e6578 data/opencreation/loot_table/blocks/test_block.json
 b94d2fa67cbf5ef35c372662b67cbf86cd830db5 data/opencreation/loot_table/blocks/twig_block.json

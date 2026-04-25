@@ -30,7 +30,6 @@ public class RecipeTableMenu extends AbstractContainerMenu {
         this.container = container;
         this.access = access;
 
-        // слоты блока
         this.addSlot(new ItemFilterSlot(container, 0, 62, 30, OpenCreationItems.PENCIL.get()));
         this.addSlot(new ItemFilterSlot(container, 1, 80, 30, OpenCreationItems.RULER.get()));
         this.addSlot(new ItemFilterSlot(container, 2, 98, 30, OpenCreationItems.DRAFTING_COMPASS.get()));
@@ -95,9 +94,9 @@ public class RecipeTableMenu extends AbstractContainerMenu {
             } else {
                 if (stack.is(OpenCreationItems.PENCIL.get())) {
                     if (!this.moveItemStackTo(stack, 0, 1, false)) return ItemStack.EMPTY;
-                } else if (stack.is(OpenCreationItems.RULER.get())) {
+                } else if (stack.is(OpenCreationItems.FLASKS.get())) {
                     if (!this.moveItemStackTo(stack, 1, 2, false)) return ItemStack.EMPTY;
-                } else if (stack.is(OpenCreationItems.DRAFTING_COMPASS.get())) {
+                } else if (stack.is(OpenCreationItems.MORTAR_AND_PESTLE.get())) {
                     if (!this.moveItemStackTo(stack, 2, 3, false)) return ItemStack.EMPTY;
                 } else if (stack.is(Items.PAPER)) {
                     if (!this.moveItemStackTo(stack, 3, 4, false)) return ItemStack.EMPTY;
@@ -121,20 +120,16 @@ public class RecipeTableMenu extends AbstractContainerMenu {
         ItemStack compass = container.getItem(2);
         ItemStack paper = container.getItem(3);
 
-        // проверка наличия
         if (pencil.isEmpty() || ruler.isEmpty() || compass.isEmpty()) return;
         if (paper.isEmpty()) return;
 
         BlueprintData data = RecipeRegistry.getTypes().get(getSelectedIndex());
 
-        // создаем чертеж
         ItemStack recipe = new ItemStack(OpenCreationItems.RECIPE.get());
         recipe.set(OCDataComponents.BLUEPRINT_DATA.get(), data);
 
-        // уменьшаем бумагу
         paper.shrink(1);
 
-        // уменьшаем прочность инструментов
         damageTool(pencil, player, 0);
         damageTool(ruler, player, 1);
         damageTool(compass, player, 2);

@@ -1,5 +1,11 @@
 {
   "values": [
-    "opencreation:test_block"
+    "opencreation:test_block",
+    "opencreation:bark_block",
+    "opencreation:granite_frame",
+    "opencreation:diorite_frame",
+    "opencreation:deepslate_frame",
+    "opencreation:basalt_frame",
+    "opencreation:blackstone_frame"
   ]
 }

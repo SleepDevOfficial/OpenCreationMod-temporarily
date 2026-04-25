@@ -2,7 +2,7 @@ package com.sdev.opencreation;
 
 import com.sdev.opencreation.command.OCChunkCommand;
 import com.sdev.opencreation.command.OCDataCommand;
-import com.sdev.opencreation.events.*;
+import com.sdev.opencreation.event.*;
 import com.sdev.opencreation.multiblock.OCMultiblockPatterns;
 import com.sdev.opencreation.network.OCNetwork;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -20,6 +20,9 @@ import static com.sdev.opencreation.block.OpenCreationBlocks.BLOCKS;
 import static com.sdev.opencreation.block.OCBlockEntities.BLOCK_ENTITIES;
 import static com.sdev.opencreation.creativetab.GeneralTab.CREATIVE_MODE_TABS;
 import static com.sdev.opencreation.data.OCDataComponents.DATA_COMPONENTS;
+import static com.sdev.opencreation.fluid.FluidDeferredRegister.FLUID_BLOCKS;
+import static com.sdev.opencreation.fluid.OpenCreationFluids.FLUIDS;
+import static com.sdev.opencreation.chemical.OpenCreationChemical.CHEMICALS;
 import static com.sdev.opencreation.item.OpenCreationItems.ITEMS;
 import static com.sdev.opencreation.screen.OpenCreationMenus.MENUS;
 
@@ -46,6 +49,10 @@ public class OpenCreation {
         modEventBus.addListener(ClientEvents::registerScreens);
         modEventBus.addListener(OCNetwork::register);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        CHEMICALS.register(modEventBus);
+        FLUID_BLOCKS.register(modEventBus);
+        FLUIDS.FLUID_TYPES.register(modEventBus);
+        FLUIDS.FLUIDS.register(modEventBus);
     }
 
     private void onRegisterCommands(RegisterCommandsEvent event) {

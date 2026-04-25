@@ -63,6 +63,9 @@ public class OCItemTagProvider extends ItemTagsProvider {
                 .add(OpenCreationItems.DEEPSLATE_SHOVEL_HOE.get())
                 .add(OpenCreationItems.BLACKSTONE_SHOVEL_HOE.get())
                 .add(OpenCreationItems.STEEL_SHOVEL_HOE.get());
+        tag(OpenCreationTags.Items.BLUEPRINTS)
+                .add(OpenCreationItems.BLUEPRINT.get())
+                .add(OpenCreationItems.RECIPE.get());
     }
 }
 

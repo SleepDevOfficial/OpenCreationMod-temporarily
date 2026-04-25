@@ -88,14 +88,13 @@ public class KaminiteBarrel extends BaseEntityBlock {
             if (!player.isShiftKeyDown() && held.getItem() instanceof ShovelItem) {
 
                 if (barrel.getWater() >= 200 &&
-                        barrel.hasItem(Items.GUNPOWDER, 2) &&
+                        barrel.hasItem(OpenCreationItems.ASH.get(), 2) &&
                         barrel.hasItem(Items.CLAY_BALL, 2) &&
                         barrel.hasItem(Items.SAND, 3) &&
                         barrel.hasItem(Items.GRAVEL, 3)) {
 
                     barrel.setWater(barrel.getWater() - 200);
-
-                    barrel.removeItem(Items.GUNPOWDER, 2);
+                    barrel.removeItem(OpenCreationItems.ASH.get(), 2);
                     barrel.removeItem(Items.CLAY_BALL, 2);
                     barrel.removeItem(Items.SAND, 3);
                     barrel.removeItem(Items.GRAVEL, 3);
@@ -117,7 +116,7 @@ public class KaminiteBarrel extends BaseEntityBlock {
                 return InteractionResult.SUCCESS;
             }
 
-            if (!held.isEmpty() && (held.getItem() == Items.SAND || held.getItem() == Items.GRAVEL || held.getItem() == Items.CLAY_BALL || held.getItem() == Items.GUNPOWDER)) {
+            if (!held.isEmpty() && (held.getItem() == Items.SAND || held.getItem() == Items.GRAVEL || held.getItem() == Items.CLAY_BALL || held.getItem() == OpenCreationItems.ASH.get())) {
 
                 ItemStackHandler inv = barrel.getInventory();
                 ItemStack remaining = insertItemIntoInventory(inv, held.copy());

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "opencreation:draft_table_primitive"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "opencreation:blocks/draft_table_primitive"
+}

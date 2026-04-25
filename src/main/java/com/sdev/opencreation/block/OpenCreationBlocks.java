@@ -7,8 +7,11 @@ import com.sdev.opencreation.multiblock.kaminite_furnace.KaminiteFurnaceControll
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -21,6 +24,18 @@ public class OpenCreationBlocks {
     public static final DeferredBlock<Block>
             TEST_BLOCK = registerBlock("test_block",
                     () -> new TestBlock(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops())),
+            BARK_BLOCK = registerBlock("bark_block",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
+            GRANITE_FRAME = registerBlock("granite_frame",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(2f, 1f).requiresCorrectToolForDrops())),
+            DIORITE_FRAME = registerBlock("diorite_frame",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(2f, 1f).requiresCorrectToolForDrops())),
+            DEEPSLATE_FRAME = registerBlock("deepslate_frame",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(2f, 1f).requiresCorrectToolForDrops())),
+            BASALT_FRAME = registerBlock("basalt_frame",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(2f, 1f).requiresCorrectToolForDrops())),
+            BLACKSTONE_FRAME = registerBlock("blackstone_frame",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
             KAMINITE_BARREL = registerBlock("kaminite_barrel",
                     () -> new KaminiteBarrel(BlockBehaviour.Properties.of().strength(2.5f, 6f).requiresCorrectToolForDrops())),
             TWIG_BLOCK = registerBlock("twig_block",

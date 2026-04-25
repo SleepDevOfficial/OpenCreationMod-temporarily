@@ -48,7 +48,7 @@ public class pebble extends Block {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (!level.isClientSide()) {
-            ItemStack getPebble = new ItemStack(OpenCreationItems.PEBBLE.get());
+            ItemStack getPebble = new ItemStack(OpenCreationItems.FRAGMENTS_OF_STONES.get());
             player.getInventory().add(getPebble);
             level.removeBlock(pos, false);
             return InteractionResult.SUCCESS;

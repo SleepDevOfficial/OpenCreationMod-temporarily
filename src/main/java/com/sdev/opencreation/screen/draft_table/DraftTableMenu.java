@@ -30,7 +30,6 @@ public class DraftTableMenu extends AbstractContainerMenu {
         this.container = container;
         this.access = access;
 
-        // слоты блока
         this.addSlot(new ItemFilterSlot(container, 0, 62, 30, OpenCreationItems.PENCIL.get()));
         this.addSlot(new ItemFilterSlot(container, 1, 80, 30, OpenCreationItems.RULER.get()));
         this.addSlot(new ItemFilterSlot(container, 2, 98, 30, OpenCreationItems.DRAFTING_COMPASS.get()));
@@ -121,20 +120,16 @@ public class DraftTableMenu extends AbstractContainerMenu {
         ItemStack compass = container.getItem(2);
         ItemStack paper = container.getItem(3);
 
-        // проверка наличия
         if (pencil.isEmpty() || ruler.isEmpty() || compass.isEmpty()) return;
         if (paper.isEmpty()) return;
 
         BlueprintData data = BlueprintRegistry.getTypes().get(getSelectedIndex());
 
-        // создаем чертеж
         ItemStack blueprint = new ItemStack(OpenCreationItems.BLUEPRINT.get());
         blueprint.set(OCDataComponents.BLUEPRINT_DATA.get(), data);
 
-        // уменьшаем бумагу
         paper.shrink(1);
 
-        // уменьшаем прочность инструментов
         damageTool(pencil, player, 0);
         damageTool(ruler, player, 1);
         damageTool(compass, player, 2);

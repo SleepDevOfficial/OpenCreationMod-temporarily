@@ -40,15 +40,7 @@ public class DraftTableScreen extends AbstractContainerScreen<DraftTableMenu> {
         addRenderableWidget(Button.builder(Component.literal(">"), b -> {
             OCNetwork.sendToServer(new DraftTablePacket(1));
         }).bounds(centerX + 40, y, 20, 20).build());
-        /*
-        addRenderableWidget(Button.builder(Component.literal("<"), b -> {
-            menu.prev();
-        }).bounds(centerX - 60, y, 20, 20).build());
 
-        addRenderableWidget(Button.builder(Component.literal(">"), b -> {
-            menu.next();
-        }).bounds(centerX + 40, y, 20, 20).build());
-        */
         addRenderableWidget(Button.builder(Component.literal("Создать"), b -> {
             minecraft.gameMode.handleInventoryButtonClick(menu.containerId, 0);
         }).bounds(centerX - 40, topPos + 50, 80, 20).build());

@@ -9,8 +9,10 @@ import com.sdev.opencreation.util.OpenCreationTiers;
 import com.sdev.opencreation.util.RepairDefinition;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -56,6 +58,10 @@ public class OpenCreationItems {
                     () -> new Item(new Item.Properties().stacksTo(1))),
             PRIMITIVE_CAMPFIRE = ITEMS.register("primitive_campfire",
                     () -> new PrimitiveCampfire(new Item.Properties())),
+            ASH = ITEMS.register("ash",
+                    () -> new Item(new Item.Properties())),
+            PRIMITIVE_IGNITE = ITEMS.register("primitive_ignite",
+                    () -> new PrimitiveIgnite(new Item.Properties())),
             BARK = ITEMS.register("bark",
                     () -> new Item(new Item.Properties())),
             OAK_PLANK = ITEMS.register("oak_plank",
@@ -128,9 +134,21 @@ public class OpenCreationItems {
                     () -> new Item(new Item.Properties())),
             HUGE_IRON_SHEET = ITEMS.register("huge_iron_sheet",
                     () -> new Item(new Item.Properties())),
-            TEXTOLITE = ITEMS.register("textolite",
+            PRESSED_LAPIS_BLANK = ITEMS.register("pressed_lapis_blank",
+                    () -> new Item(new Item.Properties())),
+            PRESSED_REDSTONE_BLANK = ITEMS.register("pressed_redstone_blank",
+                    () -> new Item(new Item.Properties())),
+            LAPIS_BLANK = ITEMS.register("lapis_blank",
+                    () -> new Item(new Item.Properties())),
+            REDSTONE_BLANK = ITEMS.register("redstone_blank",
+                    () -> new Item(new Item.Properties())),
+            LAPIS_TEXTOLITE = ITEMS.register("lapis_textolite",
+                    () -> new Item(new Item.Properties())),
+            REDSTONE_TEXTOLITE = ITEMS.register("redstone_textolite",
                     () -> new Item(new Item.Properties())),
             REDSTONE_CHIP = ITEMS.register("redstone_chip",
+                    () -> new Item(new Item.Properties())),
+            COOLED_PYROXITE = ITEMS.register("cooled_pyroxite",
                     () -> new Item(new Item.Properties())),
             LAPIS_CHIP = ITEMS.register("lapis_chip",
                     () -> new Item(new Item.Properties())),
@@ -139,7 +157,9 @@ public class OpenCreationItems {
             MODIFIED_LAPIS_SHEP = ITEMS.register("modified_lapis_chip",
                     () -> new Item(new Item.Properties())),
             FLASKS = ITEMS.register("flasks",
-                    () -> new Item(new Item.Properties())),
+                    () -> new RepirableItem(new Item.Properties().durability(4), Items.GLASS, null)),
+            MORTAR_AND_PESTLE = ITEMS.register("mortar_and_pestle",
+                    () -> new RepirableItem(new Item.Properties().durability(8), Items.IRON_INGOT, null)),
             MERCURY = ITEMS.register("mercury",
                     () -> new Item(new Item.Properties())),
             MERCURY_LAMP = ITEMS.register("mercury_lamp",

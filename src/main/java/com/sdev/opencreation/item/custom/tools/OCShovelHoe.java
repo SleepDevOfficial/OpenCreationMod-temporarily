@@ -1,6 +1,6 @@
 package com.sdev.opencreation.item.custom.tools;
 
-import com.sdev.opencreation.events.IStageRepairable;
+import com.sdev.opencreation.event.IStageRepairable;
 import com.sdev.opencreation.util.RepairDefinition;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;

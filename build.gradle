@@ -119,6 +119,7 @@ dependencies {
     implementation files("libs/create-1.21.1-6.0.6.jar")
     implementation files("libs/Jade-1.21.1-NeoForge-15.10.3.jar")
     implementation files("libs/researchcreation-1.0.0.jar")
+    implementation files("libs/Mekanism-1.21.1-10.7.17.83.jar")
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
