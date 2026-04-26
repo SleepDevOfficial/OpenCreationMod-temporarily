@@ -3,6 +3,7 @@ package com.sdev.opencreation.datagen;
 import com.sdev.opencreation.OpenCreation;
 import com.sdev.opencreation.block.OpenCreationBlocks;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -22,6 +23,7 @@ public class OCBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(OpenCreationBlocks.TEST_BLOCK);
         orientableWithItem(OpenCreationBlocks.KAMINITE_FURNACE_CONTROLLER);
+        orientableWithItem(OpenCreationBlocks.NOTCH_HEVEA_LOG);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
@@ -51,6 +53,17 @@ public class OCBlockStateProvider extends BlockStateProvider {
                 .addModels(new ConfiguredModel(model, 0, 270, false));
 
         simpleBlockItem(block, model);
+    }
+
+    private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void leavesBlock(DeferredBlock<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
     private void directionalWithItem(DeferredBlock<?> deferredBlock) {

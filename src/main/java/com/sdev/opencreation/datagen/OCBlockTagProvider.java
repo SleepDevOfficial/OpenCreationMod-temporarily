@@ -39,5 +39,17 @@ public class OCBlockTagProvider extends BlockTagsProvider {
                 .add(OpenCreationBlocks.DEEPSLATE_FRAME.get())
                 .add(OpenCreationBlocks.BASALT_FRAME.get())
                 .add(OpenCreationBlocks.BLACKSTONE_FRAME.get());
+
+        tag(BlockTags.LOGS)
+                .add(OpenCreationBlocks.HEVEA_LOG.get());
+
+        tag(BlockTags.SAPLINGS)
+                .add(OpenCreationBlocks.HEVEA_SAPLING.get());
+
+        tag(BlockTags.LOGS_THAT_BURN)
+                .add(OpenCreationBlocks.HEVEA_LOG.get())
+                .add(OpenCreationBlocks.HEVEA_WOOD.get())
+                .add(OpenCreationBlocks.STRIPPED_HEVEA_LOG.get())
+                .add(OpenCreationBlocks.STRIPPED_HEVEA_WOOD.get());
     }
 }

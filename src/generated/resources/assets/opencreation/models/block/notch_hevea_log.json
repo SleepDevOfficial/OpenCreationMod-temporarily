@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "opencreation:block/orientable/notch_hevea_log/notch_hevea_log_down",
+    "east": "opencreation:block/orientable/notch_hevea_log/notch_hevea_log_left",
+    "north": "opencreation:block/orientable/notch_hevea_log/notch_hevea_log_front",
+    "south": "opencreation:block/orientable/notch_hevea_log/notch_hevea_log_back",
+    "up": "opencreation:block/orientable/notch_hevea_log/notch_hevea_log_up",
+    "west": "opencreation:block/orientable/notch_hevea_log/notch_hevea_log_right"
+  }
+}

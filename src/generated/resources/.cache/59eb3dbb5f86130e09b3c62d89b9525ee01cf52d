@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-25T18:56:24.3754752	Loot Tables
+// 1.21.1	2026-04-26T16:02:50.4669917	Loot Tables
 8831f2bf6530e027cc92bb45dd554d076ad9f97b data/opencreation/loot_table/blocks/bark_block.json
 4a599e71399e58b6a5d31cc9898ebc2880b4fb07 data/opencreation/loot_table/blocks/basalt_frame.json
 b856ef6008636605c4c59ccfaed122cae54e4fd1 data/opencreation/loot_table/blocks/blackstone_frame.json
@@ -6,9 +6,16 @@ cf4fa515fe5cfe6ab74a1e5dacc894de5705375c data/opencreation/loot_table/blocks/dee
 57fe270a33a63d11a5a4dd77f42428eeb94138ce data/opencreation/loot_table/blocks/diorite_frame.json
 f7c30668fbe54561353d0cbf6206e773269bd9ea data/opencreation/loot_table/blocks/draft_table_primitive.json
 ac867174187b08043424fdbd35ed35e7e1b49851 data/opencreation/loot_table/blocks/granite_frame.json
+01ab078383ee82cac6668ce172970a925b5d62ef data/opencreation/loot_table/blocks/hevea_leaves.json
+ae76627d06737d0155e4ec201a5196c74efc3ee3 data/opencreation/loot_table/blocks/hevea_log.json
+2d46dc6729f56a78f62dc81ef35eb4a119de17d7 data/opencreation/loot_table/blocks/hevea_sapling.json
+1be47203e77933c29e2a5aa7d055f045bcf5af28 data/opencreation/loot_table/blocks/hevea_wood.json
 02a944e814017924d57c5655bcf161d678d1a575 data/opencreation/loot_table/blocks/kaminite_barrel.json
 f8e1de2475f7ebad5ffca9ebf6f0e4958b614ec4 data/opencreation/loot_table/blocks/kaminite_furnace_controller.json
+d1e7c3c7ebe03e8623aef489410e7b5f619a9eaa data/opencreation/loot_table/blocks/notch_hevea_log.json
 ec6694279779c359840e11f0740abdc417b44c2b data/opencreation/loot_table/blocks/pebble_block.json
 a5e1b0cb5636a995577026bce4212f6646b77997 data/opencreation/loot_table/blocks/recipe_table_primitive.json
+9c361137cc6f6b52b4929e77701fc5944b91ea33 data/opencreation/loot_table/blocks/stripped_hevea_log.json
+bfb34b8c92f80ee56dc1afbd54196d315bcbe31a data/opencreation/loot_table/blocks/stripped_hevea_wood.json
 fcb017e4c09cc7f5db13dbba03dcaef81b8e6578 data/opencreation/loot_table/blocks/test_block.json
 b94d2fa67cbf5ef35c372662b67cbf86cd830db5 data/opencreation/loot_table/blocks/twig_block.json

@@ -1,6 +1,7 @@
 package com.sdev.opencreation.datagen;
 
 import com.sdev.opencreation.OpenCreation;
+import com.sdev.opencreation.block.OpenCreationBlocks;
 import com.sdev.opencreation.item.OpenCreationItems;
 import com.sdev.opencreation.util.OpenCreationTags;
 import com.sdev.opencreation.util.OpenCreationTiers;
@@ -66,6 +67,11 @@ public class OCItemTagProvider extends ItemTagsProvider {
         tag(OpenCreationTags.Items.BLUEPRINTS)
                 .add(OpenCreationItems.BLUEPRINT.get())
                 .add(OpenCreationItems.RECIPE.get());
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(OpenCreationBlocks.HEVEA_LOG.get().asItem())
+                .add(OpenCreationBlocks.HEVEA_WOOD.get().asItem())
+                .add(OpenCreationBlocks.STRIPPED_HEVEA_LOG.get().asItem())
+                .add(OpenCreationBlocks.STRIPPED_HEVEA_WOOD.get().asItem());
     }
 }
 

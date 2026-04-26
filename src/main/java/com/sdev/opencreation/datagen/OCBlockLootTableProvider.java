@@ -39,7 +39,17 @@ public class OCBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(OpenCreationBlocks.BLACKSTONE_FRAME.get());
         dropSelf(OpenCreationBlocks.DRAFT_TABLE_PRIMITIVE.get());
         dropSelf(OpenCreationBlocks.RECIPE_TABLE.get());
+        dropSelf(OpenCreationBlocks.STRIPPED_HEVEA_LOG.get());
+        dropSelf(OpenCreationBlocks.HEVEA_WOOD.get());
+        dropSelf(OpenCreationBlocks.STRIPPED_HEVEA_WOOD.get());
+        dropSelf(OpenCreationBlocks.NOTCH_HEVEA_LOG.get());
+        dropSelf(OpenCreationBlocks.HEVEA_SAPLING.get());
 
+        add(OpenCreationBlocks.HEVEA_LEAVES.get(), block ->
+                createLeavesDrops(block, OpenCreationBlocks.HEVEA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        add(OpenCreationBlocks.HEVEA_LOG.get(), block ->
+                createSingleItemTable(OpenCreationBlocks.NOTCH_HEVEA_LOG));
         add(OpenCreationBlocks.TWIG_BLOCK.get(), block ->
                 createSingleItemTable(OpenCreationItems.TWIG.get()));
         add(OpenCreationBlocks.PEBBLE_BLOCK.get(), block ->

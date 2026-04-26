@@ -1,4 +1,7 @@
-// 1.21.1	2026-04-25T18:56:24.3734788	Tags for minecraft:block mod id opencreation
+// 1.21.1	2026-04-26T13:51:23.421435	Tags for minecraft:block mod id opencreation
+007b19c6880b716f7dddf2bf6e07244c9fa9dee6 data/minecraft/tags/block/logs.json
+30d5403723138d624e84b329aaccb0c405307d8f data/minecraft/tags/block/logs_that_burn.json
 0e7244a091c4fdc898a5b95fe5ac8a3e64a03337 data/minecraft/tags/block/mineable/axe.json
+622a1d807b11fc123387773ef851ae12bd5d12dd data/minecraft/tags/block/saplings.json
 7e7a8a760b4e74613cee09dba819d1be0c32876f data/opencreation/tags/block/incorrect_for_primitive_tool.json
 9c2099d37d36fe815e8d364f24b65a2aca940ef1 data/opencreation/tags/block/needs_primitive_tool.json

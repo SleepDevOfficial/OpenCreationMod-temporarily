@@ -17,6 +17,7 @@ public class OCBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_PEBBLE = registerKey("add_pebble");
     public static final ResourceKey<BiomeModifier> ADD_TWIG = registerKey("add_twig");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_HEVEA = registerKey("add_tree_hevea");
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
@@ -29,6 +30,11 @@ public class OCBiomeModifiers {
         context.register(ADD_TWIG, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(OCPlacedFeatures.TWIG_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_TREE_HEVEA, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(OCPlacedFeatures.HEVEA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
     }

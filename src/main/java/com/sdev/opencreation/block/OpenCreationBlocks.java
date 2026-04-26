@@ -2,16 +2,17 @@ package com.sdev.opencreation.block;
 
 import com.sdev.opencreation.OpenCreation;
 import com.sdev.opencreation.block.custom.*;
-import com.sdev.opencreation.item.OpenCreationItems;
 import com.sdev.opencreation.multiblock.kaminite_furnace.KaminiteFurnaceController;
+import com.sdev.opencreation.util.tree.OCTreeGrowers;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -46,6 +47,35 @@ public class OpenCreationBlocks {
                     () -> new DraftTablePrimitive(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
             RECIPE_TABLE = registerBlock("recipe_table_primitive",
                     () -> new RecipeTable(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block>
+            HEVEA_LOG = registerBlock("hevea_log",
+                    () -> new LogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))),
+            HEVEA_WOOD = registerBlock("hevea_wood",
+                    () -> new LogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))),
+            STRIPPED_HEVEA_LOG = registerBlock("stripped_hevea_log",
+                    () -> new LogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG))),
+            STRIPPED_HEVEA_WOOD = registerBlock("stripped_hevea_wood",
+                    () -> new LogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))),
+            HEVEA_LEAVES = registerBlock("hevea_leaves",
+                    () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
+                        @Override
+                        public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                            return true;
+                        }
+                        @Override
+                        public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                            return 60;
+                        }
+                        @Override
+                        public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                            return 30;
+                        }
+                    }),
+            HEVEA_SAPLING = registerBlock("hevea_sapling",
+                    () -> new SaplingBlock(OCTreeGrowers.HEVEA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))),
+            NOTCH_HEVEA_LOG = registerBlock("notch_hevea_log",
+                    () -> new FullRotatedBlock(BlockBehaviour.Properties.of()));
 
     public static final DeferredBlock<Block>
             KAMINITE_FURNACE_CONTROLLER = registerBlock("kaminite_furnace_controller",

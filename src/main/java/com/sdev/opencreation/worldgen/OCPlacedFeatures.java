@@ -1,6 +1,7 @@
 package com.sdev.opencreation.worldgen;
 
 import com.sdev.opencreation.OpenCreation;
+import com.sdev.opencreation.block.OpenCreationBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -23,6 +24,7 @@ import java.util.List;
 public class OCPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PEBBLE_PLACED_KEY = registerKey("pebble_placed");
     public static final ResourceKey<PlacedFeature> TWIG_PLACED_KEY = registerKey("twig_placed");
+    public static final ResourceKey<PlacedFeature> HEVEA_PLACED_KEY = registerKey("hevea_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -74,6 +76,10 @@ public class OCPlacedFeatures {
                         )
                 )
         );
+
+        register(context, HEVEA_PLACED_KEY, configuredFeatures.getOrThrow(OCConfiguredFeatures.HEVEA_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.25f, 1),
+                        OpenCreationBlocks.HEVEA_SAPLING.get()));
 
     }
 
