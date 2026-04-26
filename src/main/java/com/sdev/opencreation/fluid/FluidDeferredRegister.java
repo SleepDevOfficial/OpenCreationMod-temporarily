@@ -36,6 +36,10 @@ public class FluidDeferredRegister {
                     OpenCreation.MODID
             );
 
+    public FluidRegistryObject register(String name) {
+        return register(name, 1000, 1000, 300);
+    }
+
     public FluidRegistryObject register(
             String name,
             int density,
@@ -125,7 +129,8 @@ public class FluidDeferredRegister {
                 source[0],
                 flowing[0],
                 block[0],
-                bucket[0]
+                bucket[0],
+                name
         );
     }
 }

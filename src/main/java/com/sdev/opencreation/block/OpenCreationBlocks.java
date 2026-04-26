@@ -46,7 +46,9 @@ public class OpenCreationBlocks {
             DRAFT_TABLE_PRIMITIVE = registerBlock("draft_table_primitive",
                     () -> new DraftTablePrimitive(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
             RECIPE_TABLE = registerBlock("recipe_table_primitive",
-                    () -> new RecipeTable(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops()));
+                    () -> new RecipeTable(BlockBehaviour.Properties.of().strength(1f, 1f).requiresCorrectToolForDrops())),
+            FAUCET = registerBlock("faucet",
+                    () -> new Faucet(BlockBehaviour.Properties.of()));
 
     public static final DeferredBlock<Block>
             HEVEA_LOG = registerBlock("hevea_log",

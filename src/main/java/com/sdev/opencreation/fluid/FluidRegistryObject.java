@@ -15,19 +15,22 @@ public class FluidRegistryObject {
     private final DeferredHolder<Fluid, ? extends Fluid> flowing;
     private final DeferredBlock<LiquidBlock> block;
     private final DeferredItem<BucketItem> bucket;
+    private final String name;
 
     public FluidRegistryObject(
             DeferredHolder<FluidType, ? extends FluidType> fluidType,
             DeferredHolder<Fluid, ? extends Fluid> source,
             DeferredHolder<Fluid, ? extends Fluid> flowing,
             DeferredBlock<LiquidBlock> block,
-            DeferredItem<BucketItem> bucket
+            DeferredItem<BucketItem> bucket,
+            String name
     ) {
         this.fluidType = fluidType;
         this.source = source;
         this.flowing = flowing;
         this.block = block;
         this.bucket = bucket;
+        this.name = name;
     }
 
     public DeferredHolder<FluidType, ? extends FluidType> getFluidType() {
@@ -48,5 +51,29 @@ public class FluidRegistryObject {
 
     public DeferredItem<BucketItem> getBucket() {
         return bucket;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Fluid getSourceFluid() {
+        return source.get();
+    }
+
+    public Fluid getFlowingFluid() {
+        return flowing.get();
+    }
+
+    public LiquidBlock getBlockBlock() {
+        return block.get();
+    }
+
+    public BucketItem getBucketItem() {
+        return bucket.get();
+    }
+
+    public FluidType getFluidTypeObject() {
+        return fluidType.get();
     }
 }

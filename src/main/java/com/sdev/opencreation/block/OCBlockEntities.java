@@ -36,5 +36,8 @@ public class OCBlockEntities {
                     () -> BlockEntityType.Builder.of(
                             RecipeTableEntity::new, OpenCreationBlocks.RECIPE_TABLE.get()
                     ).build(null));
-
+    public static final Supplier<BlockEntityType<FaucetEntity>> FAUCET =
+            BLOCK_ENTITIES.register("faucet",
+                    () -> BlockEntityType.Builder.of(FaucetEntity::new,
+                            OpenCreationBlocks.FAUCET.get()).build(null));
 }

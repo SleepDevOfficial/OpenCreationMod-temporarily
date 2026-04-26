@@ -1,11 +1,16 @@
 package com.sdev.opencreation;
 
+import com.sdev.opencreation.block.OCBlockEntities;
+import com.sdev.opencreation.block.bes.FaucetEntity;
 import com.sdev.opencreation.command.OCChunkCommand;
 import com.sdev.opencreation.command.OCDataCommand;
 import com.sdev.opencreation.event.*;
 import com.sdev.opencreation.multiblock.OCMultiblockPatterns;
 import com.sdev.opencreation.network.OCNetwork;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
@@ -53,11 +58,20 @@ public class OpenCreation {
         FLUID_BLOCKS.register(modEventBus);
         FLUIDS.FLUID_TYPES.register(modEventBus);
         FLUIDS.FLUIDS.register(modEventBus);
+        modEventBus.addListener(this::registerCapabilities);
     }
 
     private void onRegisterCommands(RegisterCommandsEvent event) {
         OCChunkCommand.register(event.getDispatcher(), event.getBuildContext());
         OCDataCommand.register(event.getDispatcher());
+    }
+
+    public void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(
+                Capabilities.FluidHandler.BLOCK,
+                OCBlockEntities.FAUCET.get(),
+                (blockEntity, side) -> ((FaucetEntity) blockEntity).getFluidHandler()
+        );
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
